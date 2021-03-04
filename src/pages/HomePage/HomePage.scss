@@ -1,0 +1,17 @@
+.home {
+  background-image: url("../../assets/—Pngtree—food\ vegetable\ hand\ drawn\ background_1196744.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 6.2rem;
+
+  &__title {
+    background-color: rgb(212, 137, 137);
+    color: white;
+    padding: 0.5rem;
+    max-width: max-content;
+    font-size: 4rem;
+    overflow-wrap: break-word;
+    box-decoration-break: clone;
+    text-decoration: underline;
+  }
+}
