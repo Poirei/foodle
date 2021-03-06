@@ -1,10 +1,14 @@
 import { Button } from "@material-ui/core";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { HealthyIcon, LunchBoxIcon, PizzaIcon } from "../../assets";
+import { AuthContext } from "../../context/UserContext";
+import { auth } from "../../firebase/firebase.utils";
 import "./Header.scss";
 
 const Header = () => {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="header">
       <div className="header__left">
@@ -23,9 +27,15 @@ const Header = () => {
         </Link>
       </div>
       <div className="header__right">
-        <Link to="/signin">
-          <Button color="primary">Sign In</Button>
-        </Link>
+        {currentUser ? (
+          <Button color="primary" onClick={() => auth.signOut()}>
+            Sign Out
+          </Button>
+        ) : (
+          <Link to="/signin">
+            <Button color="primary">Sign In</Button>
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from "react";
+import React, { useContext } from "react";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Redirect } from "react-router-dom";
 import { auth } from "../../../firebase/firebase.utils";
-import { AuthProvider } from "../../../context/UserContext";
+import { AuthContext } from "../../../context/UserContext";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -30,20 +30,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export default function SignUp({ history }) {
-  const { currentUser } = useContext(AuthProvider);
+  const { currentUser } = useContext(AuthContext);
   const classes = useStyles();
-  const handleSignUp = useCallback(
-    async (event) => {
-      event.preventDefault();
-      const { email, password } = event.target.elements;
-      try {
-        await auth.createUserWithEmailAndPassword(email.value, password.value);
-      } catch (error) {
-        alert(error);
-      }
-    },
-    [history]
-  );
+  const handleSignUp = async (event) => {
+    event.preventDefault();
+    const { email, password } = event.target.elements;
+    try {
+      await auth.createUserWithEmailAndPassword(email.value, password.value);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   if (currentUser) {
     return <Redirect to="/" />;
   }
