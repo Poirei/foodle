@@ -1,0 +1,15 @@
+.city-card {
+  height: 20rem;
+  background-size: cover;
+  padding: 8rem;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 3px #95efd391;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 5.2px;
+
+  &__title {
+    backdrop-filter: blur(6px);
+  }
+}

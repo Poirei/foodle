@@ -3,3 +3,7 @@
   flex-direction: column;
   background-color: #f1f2f5;
 }
+
+a {
+  text-decoration: none;
+}

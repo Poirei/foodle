@@ -2,11 +2,14 @@
   background-image: url("../../assets/—Pngtree—food\ vegetable\ hand\ drawn\ background_1196744.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 4rem 6.2rem;
+  min-height: 100vh;
 
   &__title {
-    background-color: rgb(212, 137, 137);
-    color: white;
+    background-color: #d48989cc;
+    color: #313948;
     padding: 0.5rem;
     max-width: max-content;
     font-size: 4rem;
@@ -14,4 +17,8 @@
     box-decoration-break: clone;
     text-decoration: underline;
   }
+}
+
+.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-4.MuiGrid-align-content-xs-center.MuiGrid-justify-xs-center {
+  margin-top: 4rem;
 }

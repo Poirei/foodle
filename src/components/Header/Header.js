@@ -23,7 +23,9 @@ const Header = () => {
         </Link>
       </div>
       <div className="header__right">
-        <Button color="primary">Sign In</Button>
+        <Link to="/signin">
+          <Button color="primary">Sign In</Button>
+        </Link>
       </div>
     </div>
   );
