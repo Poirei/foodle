@@ -4,11 +4,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { Link } from "react-router-dom";
 import { auth, signInWithGoogle } from "../../../firebase/firebase.utils";
 import { AuthContext } from "../../../context/UserContext";
 
@@ -34,21 +32,17 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(23),
   },
 }));
-export default function SignIn({ history }) {
+export default function SignIn() {
   const classes = useStyles();
-  const handleLogin = useCallback(
-    async (event) => {
-      event.preventDefault();
-      const { email, password } = event.target.elements;
-      try {
-        await auth.signInWithEmailAndPassword(email.value, password.value);
-        history.push("/");
-      } catch (error) {
-        alert(error);
-      }
-    },
-    [history]
-  );
+  const handleLogin = useCallback(async (event) => {
+    event.preventDefault();
+    const { email, password } = event.target.elements;
+    try {
+      await auth.signInWithEmailAndPassword(email.value, password.value);
+    } catch (error) {
+      alert(error);
+    }
+  }, []);
   const { currentUser } = useContext(AuthContext);
   return (
     <Container component="main" maxWidth="xs">
@@ -81,7 +75,7 @@ export default function SignIn({ history }) {
             autoComplete="current-password"
           />
           <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
+            control={<Checkbox value="remember" color="tertiary" />}
             label="Remember me"
           />
           <Button

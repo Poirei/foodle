@@ -1,6 +1,18 @@
 .sign-in-and-sign-up {
-  width: 850px;
+  width: fill-available;
+  height: 100vh;
+  padding: 3rem;
   display: flex;
-  justify-content: space-between;
-  margin: 30px auto;
+  justify-content: space-evenly;
+  align-items: stretch;
+  margin: auto auto;
+  background-color: aquamarine;
+  background-image: linear-gradient(
+      to top right,
+      rgba(0, 0, 0, 0.568),
+      rgba(209, 196, 82, 0.575),
+      rgba(180, 99, 99, 0.541)
+    ),
+    url("../../assets/yummies.jpg");
+  background-size: cover;
 }

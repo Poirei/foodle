@@ -1,5 +1,6 @@
 import React from "react";
-import { SignIn, SignUp } from "../../components/forms";
+import SignIn from "../../components/forms/sign-in/SignIn";
+import SignUp from "../../components/forms/sign-up/SignUp";
 import "./SignInSignUpPage.scss";
 
 const SignInSignUpPage = () => {

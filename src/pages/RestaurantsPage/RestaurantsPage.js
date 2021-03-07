@@ -13,14 +13,14 @@ const RestaurantsPage = (props) => {
   return (
     <div className="restaurants">
       <h1 className="title">
-        Here are the restaurants available in {city_name}.
+        Here are the restaurants available in {city_name}...
       </h1>
-      <Grid container spacing={4} alignContent="center">
+      <Grid container spacing={1} alignContent="center">
         {state.cities &&
           state.cities
             .filter((city) => city.city_name === city_name)[0]
             .restaurants.map((restaurant, _idx) => (
-              <Grid key={_idx} item xs={12} sm={6} md={4}>
+              <Grid key={_idx} item xs={12} sm={6} md={3}>
                 <RestaurantCard
                   restaurantName={restaurant.restaurant_name}
                   restaurantImage={restaurant.restaurant_imageUrl}

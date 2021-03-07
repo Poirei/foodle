@@ -1,0 +1,33 @@
+.restaurants {
+  height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(69, 129, 104, 0.37),
+      rgba(255, 255, 255, 0.459),
+      rgba(255, 255, 255, 0.459)
+    ),
+    linear-gradient(
+      to top right,
+      rgba(0, 0, 0, 0.438),
+      rgba(0, 0, 0, 0.473),
+      rgba(0, 0, 0, 0.466)
+    ),
+    url("../../assets/dish_serving.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .title {
+    color: rgb(245, 245, 245);
+    text-shadow: 0 2px 3.2px rgba(0, 0, 0, 0.5);
+    font-size: 3rem;
+    text-align: center;
+    word-break: break-word;
+    padding: 5rem;
+  }
+}
+
+.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-1.MuiGrid-align-content-xs-center {
+  text-align: -webkit-center;
+  padding: 2.7rem 4rem;
+}

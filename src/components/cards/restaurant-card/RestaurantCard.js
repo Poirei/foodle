@@ -13,7 +13,7 @@ const RestaurantCard = ({ restaurantName, restaurantImage, address }) => {
       />
       <div className="restaurant-card__footer">
         <LocationOnRoundedIcon />
-        <p>{address}</p>
+        <p className="address">{address}</p>
       </div>
     </div>
   );
