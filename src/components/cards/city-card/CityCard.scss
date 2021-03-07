@@ -1,6 +1,8 @@
 .city-card {
   height: 20rem;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 8rem;
   text-align: center;
   color: white;
@@ -8,6 +10,24 @@
   font-size: 2rem;
   font-weight: 700;
   border-radius: 5.2px;
+  transition: all 0.34s ease;
+
+  &--1:hover {
+    box-shadow: 0 0 20px rgba(6, 91, 189, 0.719);
+  }
+
+  &--3:hover {
+    box-shadow: 0 0 20px rgba(243, 176, 31, 0.719);
+  }
+
+  &--2:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 157, 0.719);
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    background-position: initial;
+  }
 
   &__title {
     backdrop-filter: blur(6px);

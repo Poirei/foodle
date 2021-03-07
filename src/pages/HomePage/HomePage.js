@@ -41,6 +41,7 @@ const HomePage = () => {
                 }}
               >
                 <CityCard
+                  cityId={city.id}
                   cityName={city.city_name}
                   cityPhoto={city.city_photoUrl}
                 />
